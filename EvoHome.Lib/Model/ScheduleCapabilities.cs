@@ -1,30 +1,30 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class ScheduleCapabilities
     {
-        [JsonProperty(PropertyName ="maxSwitchpointsPerDay")]
+        [JsonPropertyName("maxSwitchpointsPerDay")]
         public int MaxSwitchpointsPerDay
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="minSwitchpointsPerDay")]
+        [JsonPropertyName("minSwitchpointsPerDay")]
         public int MinSwitchpointsPerDay
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="timingResolution")]
+        [JsonPropertyName("timingResolution")]
         public string TimingResolution
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="setpointValueResolution")]
+        [JsonPropertyName("setpointValueResolution")]
         public double SetpointValueResolution
         {
             get;

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 
 namespace Evohome.Lib
@@ -39,7 +39,7 @@ namespace Evohome.Lib
             }
         }
 
-        [JsonIgnoreAttribute]
+        [JsonIgnore]
         public DateTime TimeUntilDt
         {
             get; set;

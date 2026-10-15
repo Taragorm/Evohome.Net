@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Threading.Tasks;
 
@@ -6,19 +6,19 @@ namespace Evohome.Lib
 {
     public class HotWater
     {
-        [JsonProperty(PropertyName ="dhwId")]
+        [JsonPropertyName("dhwId")]
         public string DhwId
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="dhwStateCapabilitiesResponse")]
+        [JsonPropertyName("dhwStateCapabilitiesResponse")]
         public DHWStateCapabilities StateCapabilities
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="scheduleCapabilitiesResponse")]
+        [JsonPropertyName("scheduleCapabilitiesResponse")]
         public ScheduleCapabilities ScheduleCapabilities
         {
             get;
@@ -69,7 +69,7 @@ namespace Evohome.Lib
                 }
             }
 
-            [JsonIgnoreAttribute]
+            [JsonIgnore]
             public DateTime TimeUntilDt
             {
                 get; set;

@@ -1,41 +1,41 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System.Collections.Generic;
 
 namespace Evohome.Lib
 {
     public class HeatSetpointCapabilities
     {
-        [JsonProperty(PropertyName ="maxHeatSetpoint")]
+        [JsonPropertyName("maxHeatSetpoint")]
         public double MaxHeatSetpoint
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="minHeatSetpoint")]
+        [JsonPropertyName("minHeatSetpoint")]
         public double MinHeatSetpoint
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="valueResolution")]
+        [JsonPropertyName("valueResolution")]
         public double ValueResolution
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="allowedSetpointModes")]
+        [JsonPropertyName("allowedSetpointModes")]
         public List<string> AllowedSetpointModes
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="maxDuration")]
+        [JsonPropertyName("maxDuration")]
         public string MaxDuration
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="timingResolution")]
+        [JsonPropertyName("timingResolution")]
         public string TimingResolution
         {
             get;

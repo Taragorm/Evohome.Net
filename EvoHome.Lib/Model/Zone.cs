@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Threading.Tasks;
 
@@ -7,37 +7,37 @@ namespace Evohome.Lib
     public class Zone
     {
         private ScheduleSet _schedule = null;
-        [JsonProperty(PropertyName ="zoneId")]
+        [JsonPropertyName("zoneId")]
         public string ZoneId
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="modelType")]
+        [JsonPropertyName("modelType")]
         public string ModelType
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="heatSetpointCapabilities")]
+        [JsonPropertyName("heatSetpointCapabilities")]
         public HeatSetpointCapabilities HeatSetpointCapabilities
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="scheduleCapabilities")]
+        [JsonPropertyName("scheduleCapabilities")]
         public ScheduleCapabilities ScheduleCapabilities
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="name")]
+        [JsonPropertyName("name")]
         public string Name
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="zoneType")]
+        [JsonPropertyName("zoneType")]
         public string ZoneType
         {
             get;

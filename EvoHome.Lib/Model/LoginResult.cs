@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 
 namespace Evohome.Lib
 {
     public class LoginResult
     {
-        [JsonProperty(PropertyName ="access_token")]
+        [JsonPropertyName("access_token")]
         public string Access_token
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="token_type")]
+        [JsonPropertyName("token_type")]
         public string Token_type
         {
             get;
@@ -19,7 +19,7 @@ namespace Evohome.Lib
         }
 
         int _expires_in;
-        [JsonProperty(PropertyName ="expires_in")]
+        [JsonPropertyName("expires_in")]
         public int Expires_in
         {
             get
@@ -50,14 +50,14 @@ namespace Evohome.Lib
             private set;
         }
 
-        [JsonProperty(PropertyName ="refresh_token")]
+        [JsonPropertyName("refresh_token")]
         public string Refresh_token
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="scope")]
+        [JsonPropertyName("scope")]
         public string Scope
         {
             get;

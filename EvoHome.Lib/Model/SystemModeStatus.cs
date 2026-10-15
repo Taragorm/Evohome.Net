@@ -1,22 +1,22 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class SystemModeStatus
     {
-        [JsonProperty(PropertyName ="mode")]
+        [JsonPropertyName("mode")]
         public string Mode
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="isPermanent")]
+        [JsonPropertyName("isPermanent")]
         public bool IsPermanent
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="timeUntil")]
+        [JsonPropertyName("timeUntil")]
         public string TimeUntil
         {
             get;

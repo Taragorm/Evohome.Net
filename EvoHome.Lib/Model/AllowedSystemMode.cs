@@ -1,42 +1,42 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class AllowedSystemMode
     {
-        [JsonProperty(PropertyName ="systemMode")]
+        [JsonPropertyName("systemMode")]
         public string SystemMode
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="canBePermanent")]
+        [JsonPropertyName("canBePermanent")]
         public bool CanBePermanent
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="canBeTemporary")]
+        [JsonPropertyName("canBeTemporary")]
         public bool CanBeTemporary
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="maxDuration")]
+        [JsonPropertyName("maxDuration")]
         public string MaxDuration
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="timingResolution")]
+        [JsonPropertyName("timingResolution")]
         public string TimingResolution
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="timingMode")]
+        [JsonPropertyName("timingMode")]
         public string TimingMode
         {
             get;

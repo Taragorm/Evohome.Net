@@ -1,28 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class GatewayInfo
     {
-        [JsonProperty(PropertyName ="gatewayId")]
+        [JsonPropertyName("gatewayId")]
         public string GatewayId
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="mac")]
+        [JsonPropertyName("mac")]
         public string Mac
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="crc")]
+        [JsonPropertyName("crc")]
         public string Crc
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="isWiFi")]
+        [JsonPropertyName("isWiFi")]
         public bool IsWiFi
         {
             get;

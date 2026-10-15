@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +7,13 @@ namespace Evohome.Lib
 {
     public class DailySchedule
     {
-        [JsonProperty(PropertyName ="dayOfWeek")]
+        [JsonPropertyName("dayOfWeek")]
         public string DayOfWeek
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="switchpoints")]
+        [JsonPropertyName("switchpoints")]
         public List<Switchpoint> Switchpoints
         {
             get;

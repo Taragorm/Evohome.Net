@@ -1,64 +1,64 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class LocationInfo
     {
-        [JsonProperty(PropertyName ="locationId")]
+        [JsonPropertyName("locationId")]
         public string LocationId
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="name")]
+        [JsonPropertyName("name")]
         public string Name
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="streetAddress")]
+        [JsonPropertyName("streetAddress")]
         public string StreetAddress
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="city")]
+        [JsonPropertyName("city")]
         public string City
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="country")]
+        [JsonPropertyName("country")]
         public string Country
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="postcode")]
+        [JsonPropertyName("postcode")]
         public string Postcode
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="locationType")]
+        [JsonPropertyName("locationType")]
         public string LocationType
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="useDaylightSaveSwitching")]
+        [JsonPropertyName("useDaylightSaveSwitching")]
         public bool UseDaylightSaveSwitching
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="timeZone")]
+        [JsonPropertyName("timeZone")]
         public TimeZone TimeZone
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="locationOwner")]
+        [JsonPropertyName("locationOwner")]
         public LocationOwner LocationOwner
         {
             get;

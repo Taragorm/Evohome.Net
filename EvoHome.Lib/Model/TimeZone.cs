@@ -1,34 +1,34 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
     public class TimeZone
     {
-        [JsonProperty(PropertyName ="timeZoneId")]
+        [JsonPropertyName("timeZoneId")]
         public string TimeZoneId
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="displayName")]
+        [JsonPropertyName("displayName")]
         public string DisplayName
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="offsetMinutes")]
+        [JsonPropertyName("offsetMinutes")]
         public int OffsetMinutes
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="currentOffsetMinutes")]
+        [JsonPropertyName("currentOffsetMinutes")]
         public int CurrentOffsetMinutes
         {
             get;
             set;
         }
-        [JsonProperty(PropertyName ="supportsDaylightSaving")]
+        [JsonPropertyName("supportsDaylightSaving")]
         public bool SupportsDaylightSaving
         {
             get;

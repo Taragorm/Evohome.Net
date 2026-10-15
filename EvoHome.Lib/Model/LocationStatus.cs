@@ -1,18 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System.Collections.Generic;
 
 namespace Evohome.Lib
 {
     public class LocationStatus
     {
-        [JsonProperty(PropertyName ="locationId")]
+        [JsonPropertyName("locationId")]
         public string LocationId
         {
             get;
             set;
         }
 
-        [JsonProperty(PropertyName ="gateways")]
+        [JsonPropertyName("gateways")]
         public List<GatewayStatus> Gateways
         {
             get;

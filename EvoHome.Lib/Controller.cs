@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
@@ -79,7 +79,7 @@ namespace Evohome.Lib
                 var response = await client.PostAsync(url, content);
 
                 var responseString = await response.Content.ReadAsStringAsync();
-                LoginData = JsonConvert.DeserializeObject<LoginResult>(responseString);
+                LoginData = JsonSerializer.Deserialize<LoginResult>(responseString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             }
         }
 
@@ -142,13 +142,13 @@ namespace Evohome.Lib
 
                 responseString = await client.GetStringAsync(reqUrl);
             }
-            return JsonConvert.DeserializeObject<T>(responseString);
+            return JsonSerializer.Deserialize<T>(responseString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
 
 
         public async Task SendData<T>(string url, T data)
         {
-            string json = JsonConvert.SerializeObject(data);
+            string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             using (var client = new HttpClient())
             {
