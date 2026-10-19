@@ -13,7 +13,9 @@ namespace Evohome.Lib
 
     public class Controller
     {
-        public static readonly string RootUrl = "https://tccna.honeywell.com";
+        //public static readonly string RootUrl = "https://tccna.honeywell.com";
+        public static string RootUrl { get; set; } = "https://tccna.resideo.com";
+
         SemaphoreSlim sem = new SemaphoreSlim(1);
         private LoginResult LoginData
         {
@@ -56,7 +58,7 @@ namespace Evohome.Lib
 
         public async Task Login()
         {
-            string url = "https://tccna.honeywell.com/Auth/OAuth/Token";
+            string url = RootUrl + "/Auth/OAuth/Token";
             using (var client = new HttpClient())
             {
                 var data = new Dictionary<string, string>
@@ -93,7 +95,7 @@ namespace Evohome.Lib
 
         private async Task UserAccount()
         {
-            AccountInfo = await MakeGetRequest<AccountInfo>("https://tccna.honeywell.com/WebAPI/emea/api/v1/userAccount");
+            AccountInfo = await MakeGetRequest<AccountInfo>(RootUrl + "/WebAPI/emea/api/v1/userAccount");
         }
 
         public async Task RefreshSetup()
