@@ -103,6 +103,7 @@ namespace Evohome.Lib
             public enum Mode : int
             {
                 Normal = 0,
+                Auto = 0,
                 Custom = 6,
                 Eco = 2,
                 Away = 3,
