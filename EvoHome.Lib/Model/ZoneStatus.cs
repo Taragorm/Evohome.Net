@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using System;
 
 namespace Evohome.Lib
 {
@@ -30,7 +31,8 @@ namespace Evohome.Lib
         {
             get;
             set;
-        }
+        } 
+
         [JsonPropertyName("name")]
         public string Name
         {

@@ -91,12 +91,16 @@ namespace Evohome.Lib
                     select zs).FirstOrDefault());
         }
 
-        public async Task SetSystemModel(StateSet.Mode st, DateTime until)
+        public async Task SetSystemMode(StateSet.Mode st, DateTime until)
         {
             StateSet ts = new StateSet()
             {SystemMode = st, TimeUntilDt = until};
             await Controller.SendData(string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/temperatureControlSystem/{0}/mode", SystemId), ts);
         }
+
+        [Obsolete("Misnamed. Use SetSystemMode()")]
+        public Task SetSystemModel(StateSet.Mode st, DateTime until)
+            => SetSystemMode(st, until);
 
         public class StateSet
         {

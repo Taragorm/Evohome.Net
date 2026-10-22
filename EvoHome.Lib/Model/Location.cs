@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json.Nodes;
 
 namespace Evohome.Lib
 {
@@ -47,5 +48,14 @@ namespace Evohome.Lib
                     where gs.GatewayId == g.GatewayInfo.GatewayId
                     select gs).FirstOrDefault());
         }
+
+        public async Task<JsonObject> GetStatusRaw()
+        {
+            return await Controller.MakeGetRequest<JsonObject>(
+                        string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/{0}/status?includeTemperatureControlSystems=True", 
+                        LocationInfo.LocationId)
+                        );
+        }
+
     }
 }

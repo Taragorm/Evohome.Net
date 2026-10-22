@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Evohome.Lib
 {
@@ -17,5 +18,14 @@ namespace Evohome.Lib
             get;
             set;
         }
+
+        [JsonPropertyName("until")]
+        public DateTime Until
+        {
+            get;
+            set;
+        } = DateTime.MaxValue;
+
+
     }
 }

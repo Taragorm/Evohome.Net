@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json.Nodes;
 
 namespace Evohome.Lib
 {
@@ -113,6 +114,15 @@ namespace Evohome.Lib
             return await MakeGetRequest<InstallationModel.Location>(string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/{0}/installationInfo?includeTemperatureControlSystems=True", location.locationId));
         }*/
 
+        /// <summary>
+        /// Get the raw setup data so we can examine the returned
+        /// data directly.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<JsonArray> GetSetupRaw()
+        {
+            return await MakeGetRequest<JsonArray>(string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/installationInfo?userId={0}&includeTemperatureControlSystems=True", AccountInfo.UserId));
+        }
 
 
         /*
