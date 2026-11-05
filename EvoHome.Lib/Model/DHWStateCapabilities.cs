@@ -1,29 +1,29 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Evohome.Lib
 {
     public class DHWStateCapabilities
     {
-        [JsonPropertyName("allowedStates")]
+        [JsonProperty("allowedStates")]
         public List<string> AllowedStates
         {
             get;
             set;
         }
-        [JsonPropertyName("allowedModes")]
+        [JsonProperty("allowedModes")]
         public List<string> AllowedModes
         {
             get;
             set;
         }
-        [JsonPropertyName("maxDuration")]
+        [JsonProperty("maxDuration")]
         public string MaxDuration
         {
             get;
             set;
         }
-        [JsonPropertyName("timingResolution")]
+        [JsonProperty("timingResolution")]
         public string TimingResolution
         {
             get;

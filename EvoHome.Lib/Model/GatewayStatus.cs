@@ -1,23 +1,23 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Evohome.Lib
 {
     public class GatewayStatus
     {
-        [JsonPropertyName("gatewayId")]
+        [JsonProperty("gatewayId")]
         public string GatewayId
         {
             get;
             set;
         }
-        [JsonPropertyName("temperatureControlSystems")]
+        [JsonProperty("temperatureControlSystems")]
         public List<TemperatureControlSystemStatus> TemperatureControlSystems
         {
             get;
             set;
         }
-        [JsonPropertyName("activeFaults")]
+        [JsonProperty("activeFaults")]
         public List<string> ActiveFaults
         {
             get;

@@ -1,16 +1,16 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class TemperatureStatus
     {
-        [JsonPropertyName("temperature")]
+        [JsonProperty("temperature")]
         public double Temperature
         {
             get;
             set;
         }
-        [JsonPropertyName("isAvailable")]
+        [JsonProperty("isAvailable")]
         public bool IsAvailable
         {
             get;

@@ -1,29 +1,29 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class LocationOwner
     {
-        [JsonPropertyName("userId")]
+        [JsonProperty("userId")]
         public string UserId
         {
             get;
             set;
         }
 
-        [JsonPropertyName("username")]
+        [JsonProperty("username")]
         public string Username
         {
             get;
             set;
         }
-        [JsonPropertyName("firstname")]
+        [JsonProperty("firstname")]
         public string Firstname
         {
             get;
             set;
         }
-        [JsonPropertyName("lastname")]
+        [JsonProperty("lastname")]
         public string Lastname
         {
             get;

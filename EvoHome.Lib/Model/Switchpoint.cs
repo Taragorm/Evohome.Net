@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System;
 
 namespace Evohome.Lib
@@ -11,7 +11,7 @@ namespace Evohome.Lib
     /// </remarks>
     public class Switchpoint
     {
-        [JsonPropertyName("temperature")]
+        [JsonProperty("temperature")]
         public double Temperature
         {
             get;
@@ -20,7 +20,7 @@ namespace Evohome.Lib
         /// <summary>
         /// HH:mm:ss format
         /// </summary>
-        [JsonPropertyName("timeOfDay")]
+        [JsonProperty("timeOfDay")]
         public string TimeOfDay
         {
             get;

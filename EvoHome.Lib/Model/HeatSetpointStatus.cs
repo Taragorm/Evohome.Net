@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class HeatSetpointStatus
     {
-        [JsonPropertyName("targetTemperature")]
+        [JsonProperty("targetTemperature")]
         public double TargetTemperature
         {
             get;
             set;
         }
 
-        [JsonPropertyName("setpointMode")]
+        [JsonProperty("setpointMode")]
         public string SetpointMode
         {
             get;
             set;
         }
 
-        [JsonPropertyName("until")]
+        [JsonProperty("until")]
         public DateTime Until
         {
             get;

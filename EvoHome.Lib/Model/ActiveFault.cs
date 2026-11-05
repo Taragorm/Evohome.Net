@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class ActiveFault
     {
-        [JsonPropertyName("faultType")]
+        [JsonProperty("faultType")]
         public string FaultType
         { get; set; }
 
-        [JsonPropertyName("since")]
+        [JsonProperty("since")]
         public string Since
         { get; set; }
 

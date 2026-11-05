@@ -1,17 +1,17 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class StateStatus
     {
-        [JsonPropertyName("state")]
+        [JsonProperty("state")]
         public string State
         {
             get;
             set;
         }
 
-        [JsonPropertyName("mode")]
+        [JsonProperty("mode")]
         public string Mode
         {
             get;

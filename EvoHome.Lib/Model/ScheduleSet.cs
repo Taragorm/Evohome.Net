@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ namespace Evohome.Lib
 {
     public class ScheduleSet
     {
-        [JsonPropertyName("dailySchedules")]
+        [JsonProperty("dailySchedules")]
         public List<DailySchedule> DailySchedules
         {
             get;

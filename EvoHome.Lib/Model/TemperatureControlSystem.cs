@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,13 @@ namespace Evohome.Lib
 {
     public class TemperatureControlSystem
     {
-        [JsonPropertyName("systemId")]
+        [JsonProperty("systemId")]
         public string SystemId
         {
             get;
             set;
         }
-        [JsonPropertyName("modelType")]
+        [JsonProperty("modelType")]
         public string ModelType
         {
             get;
@@ -22,7 +22,7 @@ namespace Evohome.Lib
         }
 
         List<Zone> _zones;
-        [JsonPropertyName("zones")]
+        [JsonProperty("zones")]
         public List<Zone> Zones
         {
             get
@@ -39,13 +39,13 @@ namespace Evohome.Lib
         }
 
         HotWater _dhw;
-        [JsonPropertyName("dhw")]
+        [JsonProperty("dhw")]
         public HotWater DomesticHotWater
         {
             get { return this._dhw; }
             set { value.Parent = this; _dhw = value; }
         }
-        [JsonPropertyName("")]
+        [JsonProperty("")]
         public List<AllowedSystemMode> allowedSystemModes
         {
             get;

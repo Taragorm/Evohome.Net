@@ -1,14 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Text.Json.Nodes;
+using Newtonsoft.Json.Linq;
 
 namespace Evohome.Lib
 {
     public class Location
     {
-        [JsonPropertyName("locationInfo")]
+        [JsonProperty("locationInfo")]
         public LocationInfo LocationInfo
         {
             get;
@@ -16,7 +16,7 @@ namespace Evohome.Lib
         }
 
         List<Gateway> _gateways;
-        [JsonPropertyName("gateways")]
+        [JsonProperty("gateways")]
         public List<Gateway> Gateways
         {
             get
@@ -49,9 +49,9 @@ namespace Evohome.Lib
                     select gs).FirstOrDefault());
         }
 
-        public async Task<JsonObject> GetStatusRaw()
+        public async Task<JObject> GetStatusRaw()
         {
-            return await Controller.MakeGetRequest<JsonObject>(
+            return await Controller.MakeGetRequest<JObject>(
                         string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/{0}/status?includeTemperatureControlSystems=True", 
                         LocationInfo.LocationId)
                         );

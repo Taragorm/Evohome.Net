@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +6,7 @@ namespace Evohome.Lib
 {
     public class Gateway
     {
-        [JsonPropertyName("gatewayInfo")]
+        [JsonProperty("gatewayInfo")]
         public GatewayInfo GatewayInfo
         {
             get;
@@ -30,7 +30,7 @@ namespace Evohome.Lib
         }
 
         List<TemperatureControlSystem> _temperatureControlSystems;
-        [JsonPropertyName("temperatureControlSystems")]
+        [JsonProperty("temperatureControlSystems")]
         public List<TemperatureControlSystem> TemperatureControlSystems
         {
             get

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
 
@@ -6,34 +6,34 @@ namespace Evohome.Lib
 {
     public class ZoneStatus
     {
-        [JsonPropertyName("zoneId")]
+        [JsonProperty("zoneId")]
         public string ZoneId
         {
             get;
             set;
         }
-        [JsonPropertyName("temperatureStatus")]
+        [JsonProperty("temperatureStatus")]
         public TemperatureStatus TemperatureStatus
         {
             get;
             set;
         }
 
-        [JsonPropertyName("activeFaults")]
+        [JsonProperty("activeFaults")]
         public List<ActiveFault> ActiveFaults
         {
             get;
             set;
         }
 
-        [JsonPropertyName("heatSetpointStatus")]
+        [JsonProperty("heatSetpointStatus")]
         public HeatSetpointStatus HeatSetpointStatus
         {
             get;
             set;
         } 
 
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name
         {
             get;

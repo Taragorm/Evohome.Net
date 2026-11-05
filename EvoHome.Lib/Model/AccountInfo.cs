@@ -1,58 +1,58 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Evohome.Lib
 {
     public class AccountInfo
     {
-        [JsonPropertyName("userId")]
+        [JsonProperty("userId")]
         public string UserId
         {
             get;
             set;
         }
-        [JsonPropertyName("username")]
+        [JsonProperty("username")]
         public string Username
         {
             get;
             set;
         }
-        [JsonPropertyName("firstname")]
+        [JsonProperty("firstname")]
         public string Firstname
         {
             get;
             set;
         }
-        [JsonPropertyName("lastname")]
+        [JsonProperty("lastname")]
         public string Lastname
         {
             get;
             set;
         }
-        [JsonPropertyName("streetAddress")]
+        [JsonProperty("streetAddress")]
         public string StreetAddress
         {
             get;
             set;
         }
-        [JsonPropertyName("city")]
+        [JsonProperty("city")]
         public string City
         {
             get;
             set;
         }
-        [JsonPropertyName("postcode")]
+        [JsonProperty("postcode")]
         public string Postcode
         {
             get;
             set;
         }
-        [JsonPropertyName("country")]
+        [JsonProperty("country")]
         public string Country
         {
             get;
             set;
         }
-        [JsonPropertyName("language")]
+        [JsonProperty("language")]
         public string Language
         {
             get;

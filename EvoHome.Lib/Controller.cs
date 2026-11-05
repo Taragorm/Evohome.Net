@@ -1,9 +1,9 @@
-﻿using System.Text.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Text.Json.Nodes;
+using Newtonsoft.Json.Linq;
 
 namespace Evohome.Lib
 {
@@ -82,7 +82,7 @@ namespace Evohome.Lib
                 var response = await client.PostAsync(url, content);
 
                 var responseString = await response.Content.ReadAsStringAsync();
-                LoginData = JsonSerializer.Deserialize<LoginResult>(responseString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                LoginData = JsonConvert.DeserializeObject<LoginResult>(responseString);
             }
         }
 
@@ -119,9 +119,9 @@ namespace Evohome.Lib
         /// data directly.
         /// </summary>
         /// <returns></returns>
-        public async Task<JsonArray> GetSetupRaw()
+        public async Task<JArray> GetSetupRaw()
         {
-            return await MakeGetRequest<JsonArray>(string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/installationInfo?userId={0}&includeTemperatureControlSystems=True", AccountInfo.UserId));
+            return await MakeGetRequest<JArray>(string.Format(Controller.RootUrl + "/WebAPI/emea/api/v1/location/installationInfo?userId={0}&includeTemperatureControlSystems=True", AccountInfo.UserId));
         }
 
 
@@ -154,13 +154,13 @@ namespace Evohome.Lib
 
                 responseString = await client.GetStringAsync(reqUrl);
             }
-            return JsonSerializer.Deserialize<T>(responseString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            return JsonConvert.DeserializeObject<T>(responseString);
         }
 
 
         public async Task SendData<T>(string url, T data)
         {
-            string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            string json = JsonConvert.SerializeObject(data);
 
             using (var client = new HttpClient())
             {

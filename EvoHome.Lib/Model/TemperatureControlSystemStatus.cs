@@ -1,35 +1,35 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Evohome.Lib
 {
     public class TemperatureControlSystemStatus
     {
-        [JsonPropertyName("systemId")]
+        [JsonProperty("systemId")]
         public string SystemId
         {
             get;
             set;
         }
-        [JsonPropertyName("zones")]
+        [JsonProperty("zones")]
         public List<ZoneStatus> Zones
         {
             get;
             set;
         }
-        [JsonPropertyName("activeFaults")]
+        [JsonProperty("activeFaults")]
         public List<string> ActiveFaults
         {
             get;
             set;
         }
-        [JsonPropertyName("systemModeStatus")]
+        [JsonProperty("systemModeStatus")]
         public SystemModeStatus SystemModeStatus
         {
             get;
             set;
         }
-        [JsonPropertyName("dhw")]
+        [JsonProperty("dhw")]
         public DHWStatus DomesticHotWater
         {
             get;
